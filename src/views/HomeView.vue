@@ -22,7 +22,7 @@ export default {
     this.$store.dispatch("getStarshipsData");
 
     window.onscroll = () => {
-      let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight == document.documentElement.offsetHeight;
+      let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
 
       if (bottomOfWindow) {
         this.$store.dispatch("getNextPage");
