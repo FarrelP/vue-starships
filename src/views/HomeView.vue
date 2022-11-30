@@ -1,18 +1,33 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- Searchbox -->
+    <SearchBox />
+
+    <!-- List of Starships -->
+    <CardStarships />
+
+    <!-- Loader -->
+    <div class="loader" v-if="$store.state.isLoading"></div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
-    HelloWorld
-  }
-}
+    SearchBox: require("@/components/Searchbox.vue").default,
+    CardStarships: require("@/components/CardStarships.vue").default,
+  },
+  mounted() {
+    this.$store.dispatch("getStarshipsData");
+
+    window.onscroll = () => {
+      let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
+
+      if (bottomOfWindow) {
+        this.$store.dispatch("getNextPage");
+      }
+    };
+  },
+};
 </script>

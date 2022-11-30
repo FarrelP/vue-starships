@@ -1,0 +1,191 @@
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #2c3e50;
+  width: 120px;
+  height: 120px;
+  margin: 15% auto 0;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.searchbox {
+  width: 20%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.searchbox input {
+  margin-bottom: 1rem;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.submit-search {
+  background: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  height: 67%;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.submit-search:hover {
+  background-color: #fff; /* Green */
+  color: #42b983;
+  border: 1px solid #42b983;
+}
+
+.starship-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+.starship-card,
+.starship-detail-card {
+  background: #faf7f0;
+  border: 1px solid #000;
+  border-left: 5px solid;
+  border-bottom: 3px solid;
+  border-radius: 10px;
+  padding: 1rem;
+  transition-duration: 0.4s;
+}
+
+.starship-card:hover {
+  transform: translateY(-0.25em);
+}
+
+.starship-info-top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.starship-class,
+.starship-model,
+.starship-manufacturer {
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.starship-model {
+  text-align: end;
+}
+
+.starship-name {
+  font-weight: 600;
+  font-size: 24px;
+  margin: 1rem 0;
+}
+
+.starship-manufacturer {
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.starship-manufacturer span {
+  font-weight: 600;
+}
+
+.starship-detail {
+  font-size: 14px;
+  float: right;
+  text-decoration: none;
+  color: inherit;
+}
+
+.starship-detail-card {
+  width: 65%;
+  margin: auto;
+}
+
+.starship-description {
+  line-height: 25px;
+  font-size: 16px;
+}
+
+.starship-point {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.point-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.point-items ul {
+  padding: 0 0 0 2rem;
+  font-size: 16px;
+}
+
+.point-items ul li {
+  text-transform: capitalize;
+}
+
+.pi-title {
+  font-weight: 600;
+  line-height: 23px;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 767px) {
+  #app {
+    margin: 0 !important;
+  }
+
+  .searchbox {
+    width: 100%;
+    grid-template-columns: 1fr 0.57fr;
+  }
+
+  .starship-info-top {
+    grid-template-columns: 1fr;
+  }
+
+  .starship-model {
+    text-align: start;
+    margin-top: 0.25rem;
+  }
+
+  .starship-class,
+  .starship-model,
+  .starship-manufacturer,
+  .starship-detail-card,
+  .point-items ul {
+    font-size: 14px;
+  }
+
+  .starship-detail-card {
+    width: 80%;
+  }
+
+  .point-items ul {
+    padding: 0 0 0 1rem;
+  }
+}
