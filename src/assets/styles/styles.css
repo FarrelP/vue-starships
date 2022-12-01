@@ -81,7 +81,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 75vh;
   padding-top: 1rem;
 }
@@ -95,6 +95,7 @@
   border-radius: 10px;
   padding: 1rem;
   transition-duration: 0.4s;
+  height: fit-content;
 }
 
 .starship-card:hover {
