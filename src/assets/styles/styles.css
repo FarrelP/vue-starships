@@ -95,6 +95,7 @@
   border-radius: 10px;
   padding: 1rem;
   transition-duration: 0.4s;
+  height: fit-content;
 }
 
 .starship-card:hover {
