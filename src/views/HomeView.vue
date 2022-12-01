@@ -21,13 +21,12 @@ export default {
   mounted() {
     this.$store.dispatch("getStarshipsData");
 
-    window.onscroll = () => {
-      let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
-
-      if (bottomOfWindow) {
+    const listElm = document.querySelector('.starship-container');
+    listElm.addEventListener('scroll', e => {
+      if(listElm.scrollTop + listElm.clientHeight >= listElm.scrollHeight) {
         this.$store.dispatch("getNextPage");
       }
-    };
+    });
   },
 };
 </script>
